@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+
+</head>
+
+<body>
+
+    <center>
+        <label for="input-text">Enter Text: </label>
+        <input type="text" placeholder="Enter text to convert Barcode" id="input-text" />
+    </center>
+    <br>
+    <center>
+        <button type="button" onclick="createQR()">Generate BAR-CODE</button>
+    </center>
+    <hr>
+    <br>
+    
+   
+    <center>
+        <canvas id="barcode"></canvas>
+    </center>
+
+
+
+
+   
+
+    <script>
+
+        var barCode = document.getElementById("barcode");
+        const createQR = () => {
+
+            var inputText = document.getElementById("input-text").value;
+
+         
+
+
+            //barcode
+
+            barCode.innerHTML = "";
+           
+
+          
+
+            JsBarcode(barCode, inputText, {
+                format: 'CODE128', // You can choose other barcode formats
+                width: 4,
+                height: 100,
+            });
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
